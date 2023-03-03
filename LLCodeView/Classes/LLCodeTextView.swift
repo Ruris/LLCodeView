@@ -13,7 +13,7 @@ open class LLCodeTextView: UITextView {
     
     lazy private var lineNumberRender = LLTextViewLineNumberRender(textView: self)
 
-    public init(font: UIFont) {
+    public init(font: UIFont, lang: String, theme: String) {
         
         let textContainer = NSTextContainer()
         let layoutManager = NSLayoutManager()
@@ -26,11 +26,11 @@ open class LLCodeTextView: UITextView {
         #else
         
         let highlightr = Highlightr()!
-        highlightr.setTheme(to: "xcode")
+        highlightr.setTheme(to: theme)
         highlightr.theme.themeBackgroundColor = .black
         highlightr.theme.codeFont = RPFont(name: font.familyName, size: font.pointSize)
         let textStorage = CodeAttributedString(highlightr: highlightr)
-        textStorage.language = "swift"
+        textStorage.language = lang
 
         #endif
         

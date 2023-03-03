@@ -11,7 +11,7 @@ import LLCodeView
 
 class ViewController: UIViewController {
 
-    private let textView = LLCodeTextView(font: .systemFont(ofSize: 20))
+    private let textView = LLCodeTextView(font: .systemFont(ofSize: 20), lang: "swift", theme: "Hopscotch")
 
     override func viewDidLoad() {
         super.viewDidLoad()
