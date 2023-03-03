@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '12.0'
+
+target 'LLCodeView_Example' do
+  pod 'LLCodeView', :path => '../'
+
+  target 'LLCodeView_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase' , '~> 2.1.4'
+  end
+end
